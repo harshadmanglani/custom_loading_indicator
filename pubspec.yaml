@@ -1,8 +1,8 @@
 name: custom_loading_indicator
-description: A new Flutter package project.
+description: A Flutter package to customise the loading indicator for your organisation.
 version: 0.0.1
-author:
-homepage:
+author: Harshad Manglani <harshad.gm@gmail.com>
+homepage: https://github.com/harshadmanglani/custom_loading_indicator.git
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
