@@ -14,7 +14,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: CustomCircularLoadingIndicator(imagePath: 'images/tooth.png')  
+      child: CustomCircularLoadingIndicator(imagePath: 'images/tooth.png',)  //curveName is an optional argument - an object of the Curves class in Flutter
     );
   }
 }
