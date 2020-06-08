@@ -8,4 +8,4 @@ Added gif to pub.dev README.
 
 ## [0.0.1+2] - 08/06/2020
 
-Added relativeSizes and relativeSpeeds.
+Added relativeSizes and relativeSpeeds to control the indicator.

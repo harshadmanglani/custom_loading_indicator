@@ -24,7 +24,7 @@ class _CustomCircularLoadingIndicatorState
   int _relativeSpeed;
 
   List<double> relativeSizesList = [30, 45, 60, 80, 100, 120];
-  List<int> relativeSpeedsList = [4000, 2000, 1000, 500, 200, 100];
+  List<int> relativeSpeedsList = [4000, 3000, 2000, 1000, 500, 200, 100];
 
   @override
   void initState() {
