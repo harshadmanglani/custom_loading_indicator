@@ -1,14 +1,14 @@
 library custom_loading_indicator;
 
 import 'package:flutter/material.dart';
-import './Exceptions/SizeOutOfBoundException.dart';
 
 class CustomCircularLoadingIndicator extends StatefulWidget {
   final dynamic imagePath;
   final dynamic curveName;
-  final dynamic size;
+  final dynamic relativeSize;
+  final dynamic relativeSpeed;
   CustomCircularLoadingIndicator(
-      {this.imagePath, this.curveName = Null, this.size = 2});
+      {this.imagePath, this.curveName = Null, this.relativeSize = 2, this.relativeSpeed = 2}):assert(relativeSize>=1 && relativeSize<=6 && relativeSpeed>=1 && relativeSpeed<=6);
   @override
   _CustomCircularLoadingIndicatorState createState() =>
       _CustomCircularLoadingIndicatorState();
@@ -19,32 +19,20 @@ class _CustomCircularLoadingIndicatorState
     with TickerProviderStateMixin {
   dynamic _animation;
   AnimationController _controller;
-  String imagePath;
-  int size;
+  String _imagePath;
+  int _relativeSize;
+  int _relativeSpeed;
 
-  String errorMessage;
-
-  List<double> sizesList = [30, 45, 60, 80, 100, 120];
-
-  handleError(String error) {
-    if (mounted) {
-      setState(() {
-        errorMessage = error;
-      });
-    }
-  }
+  List<double> relativeSizesList = [30, 45, 60, 80, 100, 120];
+  List<int> relativeSpeedsList = [4000, 2000, 1000, 500, 200, 100];
 
   @override
   void initState() {
-    imagePath = widget.imagePath;
-    size = widget.size;
-    try {
-      validateSize(size);
-    } catch (e) {
-      handleError(e.toString());
-    }
+    _imagePath = widget.imagePath;
+    _relativeSize = widget.relativeSize;
+    _relativeSpeed = widget.relativeSpeed;
     _controller =
-        AnimationController(vsync: this, duration: Duration(seconds: 2));
+        AnimationController(vsync: this, duration: Duration(milliseconds: relativeSpeedsList[_relativeSpeed-1]));
     if (widget.curveName != Null) {
       _animation = new Tween(begin: 0.5, end: 1.0).animate(new CurvedAnimation(
         parent: _controller,
@@ -57,37 +45,25 @@ class _CustomCircularLoadingIndicatorState
     super.initState();
   }
 
-  void validateSize(int _size) {
-    if (_size == 0) {
-      throw new SizeOutOfBoundException("Size must not be 0");
-    } else if (_size < 0) {
-      throw new SizeOutOfBoundException("Size cannot be a negative value");
-    } else if (_size > 6) {
-      throw new SizeOutOfBoundException(
-          "Size should be less than or equal to 6");
-    }
-  }
-
   @override
   Widget build(BuildContext build) {
-    return errorMessage == null
-        ? MaterialApp(
+         return MaterialApp(
             home: RotationTransition(
-              turns: _animation == Null ? _controller : _animation,
+              turns: _animation == Null ? 
+              _controller : _animation,
               child: Center(
                 child: Container(
-                  width: 400.0,
+                  width: 200.0,
                   height: 200.0,
                   alignment: Alignment.center,
                   child: CircleAvatar(
-                    backgroundImage: AssetImage(imagePath),
-                    radius: sizesList[size - 1],
+                    backgroundImage: AssetImage(_imagePath),
+                    radius: relativeSizesList[_relativeSize - 1],
                   ),
                 ),
               ),
             ),
-          )
-        : ErrorWidget(errorMessage);
+          );
   }
 
   @override
