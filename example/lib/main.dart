@@ -16,9 +16,10 @@ class _MyAppState extends State<MyApp> {
     return Container(
         child: CustomCircularLoadingIndicator(
       imagePath: 'images/tooth.png',
-      size:
-          2, //size is an optional argument, by default it is set to 2 (It can be between 1 and 6)
-    ) //curveName is an optional argument - an object of the Curves class in Flutter
+    )
+        //relativeSize is an optional argument, by default it is set to 2 ( 1 <= relativeSize <= 6 )
+        //curveName is an optional argument - an object of the Curves class in Flutter
+        //relativeSpeed is an optional argument, by default it is set to 2 ( 1 <= relativeSpeed <= 6)
         );
   }
 }
