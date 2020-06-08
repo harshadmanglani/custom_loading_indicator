@@ -9,3 +9,6 @@ something new, this is what your customised circular loading indicator would lik
 
 ## Note
 Make sure you provide an imagePath for an image that has been registered as an asset in your pubsec.yaml file.
+
+## Contributors
+Sayan Mondal (https://github.com/S-ayanide)
