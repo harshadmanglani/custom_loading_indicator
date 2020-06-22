@@ -7,7 +7,7 @@ something new, this is what your customised circular loading indicator would lik
 indicator a try, too! 
 <p float="left">
 <img src="https://github.com/harshadmanglani/custom_loading_indicator/raw/master/customcircularloading.gif" width="350" height="700"/>
-
+&nbsp&nbsp
 <img src="https://github.com/harshadmanglani/custom_loading_indicator/raw/master/customfadeloading.gif" width="350" height="700"/>
 </p>
 
