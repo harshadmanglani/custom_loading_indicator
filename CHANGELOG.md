@@ -13,3 +13,7 @@ Added relativeSizes and relativeSpeeds to control the indicator.
 ## [0.0.2] - 22/06/2020
 
 Added custom fading indicator.
+
+## [0.0.2+1] - 22/06/2020
+
+Updated example.
