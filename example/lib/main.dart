@@ -55,6 +55,9 @@ class _CustomCircularExampleState extends State<CustomCircularExample> {
   Widget build(BuildContext context) {
     return Container(
       child: CustomCircularLoadingIndicator(imagePath: 'images/tooth.png'),
+      //relativeSize is an optional argument, by default it is set to 2 ( 1 <= relativeSize <= 6 )
+        //curveName is an optional argument - an object of the Curves class in Flutter
+        //relativeSpeed is an optional argument, by default it is set to 2 ( 1 <= relativeSpeed <= 6)
     );
   }
 }
@@ -70,6 +73,9 @@ class _CustomFadeExampleState extends State<CustomFadeExample> {
   Widget build(BuildContext context) {
     return Container(
       child: CustomFadeLoadingIndicator(imagePath: 'images/tooth.png'),
+      //relativeSize is an optional argument, by default it is set to 2 ( 1 <= relativeSize <= 6 )
+        //curveName is an optional argument - an object of the Curves class in Flutter
+        //relativeSpeed is an optional argument, by default it is set to 4 ( 1 <= relativeSpeed <= 6)
     );
   }
 }
