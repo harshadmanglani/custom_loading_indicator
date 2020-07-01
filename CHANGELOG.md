@@ -17,3 +17,7 @@ Added custom fading indicator.
 ## [0.0.2+1] - 22/06/2020
 
 Updated example.
+
+## [1.0.0] - 01/07/2020
+
+Added the custom oscillatory loading indicator
