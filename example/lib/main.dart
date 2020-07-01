@@ -57,6 +57,7 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+// NOTE: '/images/tooth.png' is a registered asset in the pubspec.yaml file
 // EXAMPLE - USING THE CUSTOM CIRCULAR LOADING INDICATOR
 class CustomCircularExample extends StatefulWidget {
   @override
